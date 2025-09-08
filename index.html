@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mundo das Humanas - Kit Anual de Apostilas de História</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+    body {background:#000;color:#eee;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem 3rem}
+
+    /* Top Banner */
+    header{position:relative;height:360px;background:linear-gradient(135deg,#000000,#0a1c0a);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;font-weight:900;user-select:none;z-index:1;padding:0 1rem;}
+    header .content{position:relative;z-index:2;max-width:700px;width:100%}
+    header h1{font-size:2.8rem;margin-bottom:0.5rem;font-weight:900;color:#fff;font-family:'Montserrat',sans-serif;}
+    header p{font-size:1.3rem;margin-bottom:1.5rem;font-weight:600;color:#cdebb0;font-family:'Montserrat',sans-serif;}
+
+    .btn-buy{background:linear-gradient(135deg,#7fff00,#32cd32);color:#000;font-weight:700;font-size:1.3rem;padding:1rem 3rem;border-radius:50px;box-shadow:0 6px 15px rgba(50,205,50,0.9);transition:all .3s;cursor:pointer;border:none;text-transform:uppercase;margin-bottom:.6rem;display:inline-block;font-family:'Montserrat',sans-serif;}
+    .btn-buy:hover{background:linear-gradient(135deg,#6bdb00,#28a428);box-shadow:0 8px 20px rgba(40,164,40,1);}
+    .btn-description{background:rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:1rem;padding:.5rem 1.2rem;border-radius:12px;max-width:320px;margin:0 auto;box-shadow:0 0 8px rgba(255,255,255,.15);font-family:'Montserrat',sans-serif;}
+
+    /* Partículas */
+    #particles-js{position:absolute;inset:0;z-index:0;pointer-events:none;}
+
+    /* Seções */
+    section.vendas{margin-top:3rem;text-align:center}
+    section.vendas h2{font-size:2.2rem;margin-bottom:1rem;color:#7fff00;font-weight:900;font-family:'Montserrat',sans-serif;}
+    section.vendas p{font-size:1.1rem;max-width:700px;margin:0 auto 2rem;color:#ccc;font-family:'Montserrat',sans-serif;}
+
+    section.kit,section.faq,section.depoimentos{background:#111;border-radius:12px;padding:2.5rem 1rem;box-shadow:0 0 20px rgba(168,224,99,.3);max-width:900px;margin:3rem auto;color:#cdebb0;font-family:'Montserrat',sans-serif;}
+    section.kit h2,section.faq h2,section.depoimentos h2{text-align:center;font-size:2rem;color:#a8e063;margin-bottom:1.5rem;font-weight:900;font-family:'Montserrat',sans-serif;}
+    section.kit ul{list-style:none;font-size:1.1rem;font-weight:600;max-width:600px;margin:0 auto;padding:0;font-family:'Montserrat',sans-serif;}
+    section.kit ul li{margin-bottom:1rem;padding-left:1.8rem;position:relative}
+    section.kit ul li::before{content:"✓";position:absolute;left:0;top:0;color:#7fff00;font-weight:900;font-size:1.3rem;text-shadow:0 0 4px #7fff00}
+
+    section.faq dt{font-weight:700;margin-top:1rem;color:#7fff00;text-shadow:0 0 4px #7fff00;font-family:'Montserrat',sans-serif;}
+    section.faq dd{margin-left:1rem;margin-bottom:1rem;font-weight:500;color:#cdebb0;font-family:'Montserrat',sans-serif;}
+
+    .depoimentos-lista{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center}
+    .depoimento{background:#222;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,.8);padding:1.8rem 2rem;max-width:350px;flex:1 1 300px;color:#ddd;font-family:'Montserrat',sans-serif;}
+    .depoimento p{font-style:italic;margin-bottom:1rem;font-size:1rem;line-height:1.4;color:#cdebb0;font-family:'Montserrat',sans-serif;}
+    .depoimento .autor{font-weight:700;color:#a8e063;font-size:1.1rem;text-align:right;font-family:'Montserrat',sans-serif;}
+
+    footer{background:#111;color:#a8e063;text-align:center;padding:1.5rem 1rem;font-size:.9rem;margin-top:auto;font-family:'Montserrat',sans-serif;}
+    footer a{color:#ffd200;font-weight:700}
+    footer a:hover{color:#d72631}
+
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25d366;border-radius:50px;padding:.8rem 1.2rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 4px 12px rgba(0,0,0,.3);cursor:pointer;z-index:1000;animation:pulse 2.5s infinite;transition:.3s;font-family:'Montserrat',sans-serif;}
+    .whatsapp-float:hover{background:#1ebe57;animation-play-state:paused}
+    .whatsapp-float i{font-size:28px;color:#fff}
+    .whatsapp-float span{color:#fff;font-weight:700;font-size:1rem;font-family:'Montserrat',sans-serif;}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7);}50%{box-shadow:0 0 15px 10px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+    @media(max-width:768px){header h1{font-size:2rem}.btn-buy{padding:1rem 2rem;font-size:1.1rem}.btn-description{max-width:90vw;font-size:.9rem}.depoimento{max-width:90vw}.whatsapp-float span{display:none}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div id="particles-js"></div>
+    <div class="content">
+      <h1>Mundo das Humanas</h1>
+      <p>Transforme suas aulas com os melhores materiais didáticos de História e Geografia do Professor Jean Carlos</p>
+      <a href="https://pay.hotmart.com/V100858723D?bid=1757328657407" target="_blank" rel="noopener" class="btn-buy">Comprar agora</a>
+      <div class="btn-description">Kit Anual de Apostilas de História - Ensino Médio (1° ao 3° ano)</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="vendas">
+      <h2>Por que escolher o Mundo das Humanas?</h2>
+      <p>Com apostilas e materiais didáticos cuidadosamente elaborados, o Professor Jean Carlos oferece conteúdos que facilitam o aprendizado, despertam o interesse e promovem o pensamento crítico dos alunos. Kits anuais e bimestrais para História e Geografia, prontos para você aplicar em sala de aula ou estudar com qualidade.</p>
+    </section>
+
+    <section class="kit">
+      <h2>O que vem no Kit Anual?</h2>
+      <ul>
+        <li>Roteiros bimestrais</li>
+        <li>Atividades ativas</li>
+        <li>Materiais visuais</li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ Rápido</h2>
+      <dl>
+        <dt>Formato:</dt><dd>PDFs prontos para imprimir e slides editáveis.</dd>
+        <dt>Entrega:</dt><dd>Link imediato após pagamento.</dd>
+        <dt>Uso:</dt><dd>Licença para uso em sala — não comercializar sem autorização.</dd>
+        <dt>Suporte:</dt><dd>Contato pelo WhatsApp do professor.</dd>
+      </dl>
+    </section>
+
+    <section class="depoimentos">
+      <h2>O que dizem nossos alunos e professores</h2>
+      <div class="depoimentos-lista">
+        <article class="depoimento"><p>“Suas apostilas são muito boas. Estou utilizando elas. São as melhores que eu encontrei até hoje.”</p><div class="autor">- Juliana</div></article>
+        <article class="depoimento"><p>“Essas estão maravilhosas. Esses conteúdos são ótimos para trabalhar. Dá para elaborar aulas diversificadas, provocando o questionamento dos alunos.”</p><div class="autor">- Querliane Prof</div></article>
+        <article class="depoimento"><p>“Bom dia. Apenas enfatizando a grande aplicabilidade dos teus 'lapbooks', pois atuo muito em sala de aula com mapas mentais e seminários. E esta metodologia, para visualizar o aprendizado posterior é fantástica. Parabéns pelo trabalho!”</p><div class="autor">- Claudio Ari</div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Site desenvolvido por <a href="https://www.mightx.com.br" target="_blank" rel="noopener">MightX</a> | Visite o blog do Professor Jean Carlos: <a href="https://historiacomprofjean.blogspot.com/" target="_blank" rel="noopener">História com Prof. Jean</a></p>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.link/xi10uo" target="_blank" rel="noopener" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+    <span>Fale Conosco</span>
+  </a>
+
+  <!-- Partículas via particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js',{
+      particles:{number:{value:40,density:{enable:true,value_area:800}},color:{value:'#7fff00'},shape:{type:'circle'},opacity:{value:0.3},size:{value:2,random:true},line_linked:{enable:false},move:{enable:true,speed:0.6,direction:'none',random:true,straight:false,out_mode:'out'}}
+    });
+  </script>
+</body>
+</html>
